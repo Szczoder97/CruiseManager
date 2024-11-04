@@ -1,6 +1,14 @@
+using CruiseManager.Modules.Boats.Api;
+using CruiseManager.Shared.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers();
+var services = builder.Services;
+
+services.AddInfrastructure();
+
+// register modules
+services.AddBoats();
 
 var app = builder.Build();
-app.MapControllers();
+app.UseInfrastructure();
 app.Run();
