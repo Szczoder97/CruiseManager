@@ -1,0 +1,5 @@
+@url = http://localhost:5251
+@boatsModule = /boats-module
+
+###
+GET {{url}}{{boatsModule}}
