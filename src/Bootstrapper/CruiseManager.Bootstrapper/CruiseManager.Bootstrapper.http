@@ -1,0 +1,6 @@
+@CruiseManager.Bootstrapper_HostAddress = http://localhost:5251
+
+GET {{CruiseManager.Bootstrapper_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

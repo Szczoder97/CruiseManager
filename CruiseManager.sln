@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{900041D1-41A2-467D-914C-561465E3FD66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrapper", "Bootstrapper", "{70DE43B4-AFE1-40AE-88C6-81C522DE9E37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CruiseManager.Bootstrapper", "src\Bootstrapper\CruiseManager.Bootstrapper\CruiseManager.Bootstrapper.csproj", "{E305D18E-DC7E-4A97-93A8-F961BCAC3E8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{750BFF1E-5CB3-4F87-A964-03FC45839496}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CruiseManager.Shared.Abstractions", "src\Shared\CruiseManager.Shared.Abstractions\CruiseManager.Shared.Abstractions.csproj", "{5D591493-3D6A-4AFB-A0C5-426DB07575EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CruiseManager.Shared.Infrastructure", "src\Shared\CruiseManager.Shared.Infrastructure\CruiseManager.Shared.Infrastructure.csproj", "{A09240B8-F53C-412B-AD45-16F99D4280F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{77AE29E6-5EF0-43D9-9161-830630C0EE70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Boats", "Boats", "{F778332F-9EAE-43D5-A31A-4C96AD08CDA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CruiseManager.Modules.Boats.Api", "src\Modules\Boats\CruiseManager.Modules.Boats.Api\CruiseManager.Modules.Boats.Api.csproj", "{C4BA24C1-C1DC-42FE-84C1-A886943E0E19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CruiseManager.Modules.Boats.Core", "src\Modules\Boats\CruiseManager.Modules.Boats.Core\CruiseManager.Modules.Boats.Core.csproj", "{FC19FF9F-2991-4C06-A285-92D0F4BE860C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E305D18E-DC7E-4A97-93A8-F961BCAC3E8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E305D18E-DC7E-4A97-93A8-F961BCAC3E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E305D18E-DC7E-4A97-93A8-F961BCAC3E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E305D18E-DC7E-4A97-93A8-F961BCAC3E8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D591493-3D6A-4AFB-A0C5-426DB07575EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D591493-3D6A-4AFB-A0C5-426DB07575EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D591493-3D6A-4AFB-A0C5-426DB07575EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D591493-3D6A-4AFB-A0C5-426DB07575EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A09240B8-F53C-412B-AD45-16F99D4280F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A09240B8-F53C-412B-AD45-16F99D4280F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A09240B8-F53C-412B-AD45-16F99D4280F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A09240B8-F53C-412B-AD45-16F99D4280F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4BA24C1-C1DC-42FE-84C1-A886943E0E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4BA24C1-C1DC-42FE-84C1-A886943E0E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4BA24C1-C1DC-42FE-84C1-A886943E0E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4BA24C1-C1DC-42FE-84C1-A886943E0E19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC19FF9F-2991-4C06-A285-92D0F4BE860C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC19FF9F-2991-4C06-A285-92D0F4BE860C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC19FF9F-2991-4C06-A285-92D0F4BE860C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC19FF9F-2991-4C06-A285-92D0F4BE860C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{70DE43B4-AFE1-40AE-88C6-81C522DE9E37} = {900041D1-41A2-467D-914C-561465E3FD66}
+		{E305D18E-DC7E-4A97-93A8-F961BCAC3E8D} = {70DE43B4-AFE1-40AE-88C6-81C522DE9E37}
+		{750BFF1E-5CB3-4F87-A964-03FC45839496} = {900041D1-41A2-467D-914C-561465E3FD66}
+		{5D591493-3D6A-4AFB-A0C5-426DB07575EF} = {750BFF1E-5CB3-4F87-A964-03FC45839496}
+		{A09240B8-F53C-412B-AD45-16F99D4280F9} = {750BFF1E-5CB3-4F87-A964-03FC45839496}
+		{77AE29E6-5EF0-43D9-9161-830630C0EE70} = {900041D1-41A2-467D-914C-561465E3FD66}
+		{F778332F-9EAE-43D5-A31A-4C96AD08CDA8} = {77AE29E6-5EF0-43D9-9161-830630C0EE70}
+		{C4BA24C1-C1DC-42FE-84C1-A886943E0E19} = {F778332F-9EAE-43D5-A31A-4C96AD08CDA8}
+		{FC19FF9F-2991-4C06-A285-92D0F4BE860C} = {F778332F-9EAE-43D5-A31A-4C96AD08CDA8}
+	EndGlobalSection
+EndGlobal
