@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
+using CruiseManager.Shared.Infrastructure.Exceptions;
 
 [assembly: InternalsVisibleTo("CruiseManager.Bootstrapper")]
 namespace CruiseManager.Shared.Infrastructure
@@ -10,6 +11,7 @@ namespace CruiseManager.Shared.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
+            services.AddExceptionHandling();
             services.AddControllers()
                 .ConfigureApplicationPartManager(manager =>
                 {
@@ -21,6 +23,7 @@ namespace CruiseManager.Shared.Infrastructure
 
         public static WebApplication UseInfrastructure(this WebApplication app)
         {
+            app.UseExceptionHandling();
             app.MapControllers();
 
             return app;
