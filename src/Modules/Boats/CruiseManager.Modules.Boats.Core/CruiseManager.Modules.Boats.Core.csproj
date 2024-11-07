@@ -10,4 +10,13 @@
     <ProjectReference Include="..\..\..\Shared\CruiseManager.Shared.Infrastructure\CruiseManager.Shared.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DAL\Migrations\" />
+    <Folder Include="DAL\Repositories\" />
+    <Folder Include="DTO\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Policies\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>

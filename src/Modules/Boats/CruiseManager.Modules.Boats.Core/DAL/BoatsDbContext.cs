@@ -1,10 +1,12 @@
+using CruiseManager.Modules.Boats.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace CruiseManager.Modules.Boats.Core.DAL;
 
 internal class BoatsDbContext : DbContext
 {
-    // TODO: boats, shipowners, accessories
+    // TODO: shipowners, accessories
+    private DbSet<Boat> Boats { get; set; }
 
     public BoatsDbContext(DbContextOptions options) : base(options)
     {
