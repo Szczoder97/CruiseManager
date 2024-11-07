@@ -2,7 +2,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
+using CruiseManager.Shared.Abstractions;
 using CruiseManager.Shared.Infrastructure.Exceptions;
+using CruiseManager.Shared.Infrastructure.Services;
+using CruiseManager.Shared.Infrastructure.Time;
 using Microsoft.Extensions.Configuration;
 
 [assembly: InternalsVisibleTo("CruiseManager.Bootstrapper")]
@@ -13,6 +16,8 @@ namespace CruiseManager.Shared.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
             services.AddExceptionHandling();
+            services.AddSingleton<IClock, UtcClock>();
+            services.AddHostedService<AppInitializer>();
             services.AddControllers()
                 .ConfigureApplicationPartManager(manager =>
                 {

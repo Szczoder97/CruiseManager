@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
+using CruiseManager.Modules.Boats.Core.DAL;
+using CruiseManager.Shared.Infrastructure.Postgres;
 
 [assembly: InternalsVisibleTo("CruiseManager.Modules.Boats.Api")]
 namespace CruiseManager.Modules.Boats.Core
@@ -8,6 +10,7 @@ namespace CruiseManager.Modules.Boats.Core
     {
         public static IServiceCollection AddCore(this IServiceCollection services)
         {
+            services.AddPostgres<BoatsDbContext>();
             return services;
         }
     }
