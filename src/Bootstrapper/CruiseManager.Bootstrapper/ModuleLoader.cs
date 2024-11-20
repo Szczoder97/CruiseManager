@@ -5,16 +5,41 @@ namespace CruiseManager.Bootstrapper;
 
 internal static class ModuleLoader
 {
-    public static IList<Assembly> LoadAssemblies()
+    public static IList<Assembly> LoadAssemblies( IConfiguration configuration)
     {
-        var assembilies = AppDomain.CurrentDomain.GetAssemblies().ToList();
-        var locations = assembilies.Where(a => !a.IsDynamic).Select(a => a.Location).ToArray();
+        const string modulePart = "CruiseManager.Modules.";
+        
+        var assemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
+        var locations = assemblies.Where(a => !a.IsDynamic).Select(a => a.Location).ToArray();
         var files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll")
             .Where(x => !locations.Contains(x, StringComparer.InvariantCultureIgnoreCase))
             .ToList();
-        files.ForEach(x => assembilies.Add(AppDomain.CurrentDomain.Load(AssemblyName.GetAssemblyName(x))));
+        
+        var disabledModules = new List<string>();
+        foreach (var file in files)
+        {
+            if (!file.Contains(modulePart))
+            {
+                continue;
+            }
+            
+            var moduleName = file.Split(modulePart)[1].Split(".")[0];
+            var enabled = configuration.GetValue<bool>($"{moduleName}:module:enabled");
 
-        return assembilies;
+            if (!enabled)
+            {
+                disabledModules.Add(file);
+            }
+        }
+
+        foreach (var dm in disabledModules)
+        {
+            files.Remove(dm);
+        }
+        
+        files.ForEach(x => assemblies.Add(AppDomain.CurrentDomain.Load(AssemblyName.GetAssemblyName(x))));
+
+        return assemblies;
     }
 
     public static IList<IModule> LoadModules(IEnumerable<Assembly> assemblies)

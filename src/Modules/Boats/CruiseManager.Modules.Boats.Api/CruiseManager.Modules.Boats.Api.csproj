@@ -10,4 +10,15 @@
     <ProjectReference Include="..\CruiseManager.Modules.Boats.Core\CruiseManager.Modules.Boats.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="module.boats.json" />
+    <Content Include="module.boats.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="module.boats.development.json" />
+    <Content Include="module.boats.development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

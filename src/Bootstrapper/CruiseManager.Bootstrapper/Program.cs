@@ -1,13 +1,16 @@
 using CruiseManager.Bootstrapper;
 using CruiseManager.Shared.Infrastructure;
-
-var assemblies = ModuleLoader.LoadAssemblies();
-var modules = ModuleLoader.LoadModules(assemblies);
+using CruiseManager.Shared.Infrastructure.Modules;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.ConfigureModules();
+
 var services = builder.Services;
 
-services.AddInfrastructure();
+var assemblies = ModuleLoader.LoadAssemblies(builder.Configuration);
+var modules = ModuleLoader.LoadModules(assemblies);
+
+services.AddInfrastructure(assemblies, modules);
 // auto registering modules
 foreach (var module in modules)
 {
