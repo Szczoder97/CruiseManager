@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Modules\Boats\CruiseManager.Modules.Boats.Api\CruiseManager.Modules.Boats.Api.csproj" />
+    <ProjectReference Include="..\..\Modules\Users\CruiseManager.Modules.Users.Api\CruiseManager.Modules.Users.Api.csproj" />
     <ProjectReference Include="..\..\Shared\CruiseManager.Shared.Infrastructure\CruiseManager.Shared.Infrastructure.csproj" />
   </ItemGroup>
 

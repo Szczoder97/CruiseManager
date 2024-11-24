@@ -2,8 +2,8 @@
 
 namespace CruiseManager.Modules.Boats.Api.Controllers
 {
-    [Route("boats-module")]
-    internal class HomeController : ControllerBase
+    [Route(BoatsModule.BasePath)]
+    internal class HomeController : BaseController
     {
         [HttpGet]
         public ActionResult<string> Get() => "Boats API";
